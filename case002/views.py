@@ -23,5 +23,5 @@ def s2(request):
 
 def s2_name(request,name):
     list1 = Data2.objects.exclude(role='---').exclude(role='Absence').filter(name=name).order_by('date1')
-    context = {'list1': list1}
+    context = {'list1': list1,'name': name}
     return render(request, 'case002/s2_name.html', context)
