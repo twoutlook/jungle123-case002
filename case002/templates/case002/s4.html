@@ -1,28 +1,33 @@
 {% extends 'note/base.html' %}
 {% load static %}
+{% load case001_extra %}
 {% block content %}
 
 <h1><br>Club</h1>
 <a href='../'>Back to Index</a>
 <hr>
-<h2>Meeting Head Count</h2>
+<h2>Speaker & IE</h2>
+<hr>
+
 <table class='gridtable'>
     <tr>
    
     <th></th>
+    <!-- <th>Name</th> -->
     <th>Date</th>
-    <!-- <th>Type</th> -->
-    <th>Members</th>
+    <th>Role</th>
+    <th>Name</th>
     
     </tr>
     {% for x in list1 %}
     <tr>
 
         <th>{{forloop.counter}} </th>
-        <td> {{x.date1}} </td>
-        <!-- <td > {{x.member}} </td> -->
-        <td align='right'> {{x.headcnt}} </td>
-     </tr>
+        <!-- <td > {{x.name}}</a> </td> -->
+        <td > {{x.date1}}</a> </td>
+        <td > {{x.role}}</a> </td>
+        <td > {{x.name}}</a> </td>
+       </tr>
 
     {% endfor %}
 </table>

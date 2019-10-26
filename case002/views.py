@@ -25,3 +25,20 @@ def s2_name(request,name):
     list1 = Data2.objects.exclude(role='---').exclude(role='Absence').filter(name=name).order_by('date1')
     context = {'list1': list1,'name': name}
     return render(request, 'case002/s2_name.html', context)
+
+def s3(request):
+    list1 = Data2.objects.filter(role__in = ['Ah-counter','GE','Grammarian','TME','TT Evaluator','TT-master','Timer'])
+    pivot_table = pivot(list1, 'date1', 'role', 'name',aggregation=Min)
+    for x in pivot_table:
+        x['Ah']=x['Ah-counter']
+        x['TT_Evaluator']=x['TT Evaluator']
+        x['TT_master']=x['TT-master']
+        # print(x)
+    context = {'list1': pivot_table}
+    return render(request, 'case002/s3.html', context)
+def s4(request):
+    list1 = Data2.objects.filter(role__in = ['Speaker','IE']).order_by('date1','-role','name')
+    for x in list1:
+        print(x)
+    context = {'list1': list1}
+    return render(request, 'case002/s4.html', context)

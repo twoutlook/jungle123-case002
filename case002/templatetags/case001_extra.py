@@ -8,6 +8,8 @@ def default_if_none_zero(value, arg):
     """If value is None, use given default."""
     # print(value)
     # if value:
+    if value == 'None':
+        return arg
     if value == None:
         return arg
     if value == 0:
