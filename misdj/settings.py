@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'case001',
+    'case002',
     'note', # 加入 note App
     'import_export', # 加入 import_export App
     'django.contrib.humanize', # 給 template 使用 {% load humanize %}
@@ -130,3 +131,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# https://stackoverflow.com/questions/7216764/in-the-django-admin-site-how-do-i-change-the-display-format-of-time-fields
+from django.conf.locale.en import formats as es_formats
+
+es_formats.DATE_FORMAT = "Y-m-d"

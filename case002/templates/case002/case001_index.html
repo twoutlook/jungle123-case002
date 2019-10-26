@@ -1,0 +1,44 @@
+{% extends 'note/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<h1><br>CASE001</h1>
+<hr>
+<h2>各月統計表</h2>
+<h3>
+    <ul style='font-family:  Courier, monospace;'>
+
+        <li><a href='b1/'>(b1)各地點每日用工統計表</a></li>
+
+    </ul>
+</h3>
+<hr>
+
+<h2>地點按文本排序</h2>
+<h3>
+    <ul style='font-family:  Courier, monospace;'>
+
+        <li><a href='a1/'>(a1)各地點統計</a></li>
+
+        <li><a href='a2/'>(a2)各地點統計,顯示出7月份</a></li>
+        <li><a href='a3/'>(a3)各地點統計,顯示出789三個月份</a></li>
+    </ul>
+</h3>
+<hr>
+<h2>地點按工作習慣排序</h2>
+<h3>
+    <ul style='font-family:  Courier, monospace;'>
+
+        <li><a href='a1v2/'>(a1v2)各地點統計</a></li>
+
+        <li><a href='a2v2/'>(a2v2)各地點統計,顯示出7月份</a></li>
+        <li><a href='a3v2/'>(a3v2)各地點統計,顯示出789三個月份</a></li>
+        <li><a href='a4v2/'>(a3v2)各地點789三個月份統計 ***</a></li>
+    </ul>
+</h3>
+<!-- 
+<h2><br>季度各月份統計</h2>
+<a href='a8/'>各地點各月份統計</a> -->
+
+{% endblock %}
