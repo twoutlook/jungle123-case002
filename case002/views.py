@@ -44,7 +44,7 @@ def s1_date(request,date1):
     return render(request, 'case002/s1_date.html', context)
 
 def s2(request):
-    list1 = Data2.objects.exclude(role='---').exclude(role='Absence').values('name').annotate(pointssum=Sum('points')).order_by('-pointssum')
+    list1 = Data2.objects.exclude(role='---').exclude(role='Absence').values('name').annotate(pointssum=Sum('points')).filter(pointssum__gt = 0).order_by('-pointssum')
     context = {'list1': list1}
     return render(request, 'case002/s2.html', context)
 
