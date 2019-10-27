@@ -9,7 +9,6 @@
 <table class='gridtable'>
     <tr>
    
-    <th></th>
     <th>Date</th>
     <!-- <th>Type</th> -->
     <th>Member</th>
@@ -20,8 +19,7 @@
     {% for x in list1 %}
     <tr>
 
-        <th>{{forloop.counter}} </th>
-        <td> <a href='{{x.date1}}/'>{{x.date1}}</a> </td>
+        <td> {{x.date1}} </td>
         <!-- <td > {{x.member}} </td> -->
         <td align='right'> {{x.Member}} </td>
         <td align='right'> {{x.Guest}} </td>
@@ -30,5 +28,31 @@
 
     {% endfor %}
 </table>
+<hr>
+<table class='gridtable'>
+    <tr>
+   
+    <th></th>
+    <!-- <th>Date</th> -->
+    <!-- <th>Type</th> -->
+    <th>Member</th>
+    <th>Name</th>
+    <th>Role</th>
+    
+    </tr>
+    {% for x in list2 %}
+    <tr>
+
+        <th>{{forloop.counter}} </th>
+        <!-- <td> {{x.date1}} </td> -->
+        <td > {{x.member}} </td>
+        <td align='left'> {{x.name}} </td>
+        <td align='left'> {{x.role}} </td>
+        <!-- <td align='right'> {{x.total}} </td> -->
+     </tr>
+
+    {% endfor %}
+</table>
+
 
 {% endblock %}

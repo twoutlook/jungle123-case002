@@ -13,4 +13,11 @@ class Data2(models.Model):
     role = models.CharField(max_length=32)
     points = models.IntegerField(default=0)
     class Meta:
-        unique_together = ('name', 'date1',)
+        unique_together = ('name', 'date1','member',)
+
+class Best(models.Model):
+    date1 = models.DateField()
+    title = models.CharField(max_length=32)
+    name = models.CharField(max_length=32)
+    class Meta:
+        unique_together = ( 'date1','title')

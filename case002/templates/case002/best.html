@@ -3,10 +3,9 @@
 {% load case001_extra %}
 {% block content %}
 
-
 <a href='../'>Back to Index</a>
 <hr>
-<h2>Speaker & IE</h2>
+<h2>Meeting Best</h2>
 <hr>
 
 <table class='gridtable'>
@@ -15,8 +14,9 @@
     <th></th>
     <!-- <th>Name</th> -->
     <th>Date</th>
+    <th>TT</th>
+    <th>Role</th>
     <th>Speaker</th>
-    <th>IE</th>
     
     </tr>
     {% for x in list1 %}
@@ -25,9 +25,10 @@
         <th>{{forloop.counter}} </th>
         <!-- <td > {{x.name}}</a> </td> -->
         <td > {{x.date1}}</a> </td>
-        <td > {{x.speaker}}</a> </td>
-        <td > {{x.ie}}</a> </td>
-       </tr>
+        <td > {{x.tt|default_if_none_zero:'---'}}</a> </td>
+        <td > {{x.role|default_if_none_zero:'---'}}</a> </td>
+        <td > {{x.speaker|default_if_none_zero:'---'}}</a> </td>
+    </tr>
 
     {% endfor %}
 </table>

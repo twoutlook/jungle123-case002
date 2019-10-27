@@ -6,6 +6,8 @@ from import_export.admin import ImportExportModelAdmin
 
 from .models import Data1
 from .models import Data2
+from .models import Best
+
 
 
 class Data1Resource(resources.ModelResource):
@@ -31,3 +33,15 @@ class Data2Admin(ImportExportModelAdmin):
     search_fields = ['date1']
    
 admin.site.register(Data2, Data2Admin)
+
+class BestResource(resources.ModelResource):
+    class Meta:
+        model = Best
+
+class BestAdmin(ImportExportModelAdmin):
+    resource_class = BestResource
+    list_display = ('date1','title','name')
+    list_filter = ['title','name',]
+    search_fields = ['date1']
+   
+admin.site.register(Best, BestAdmin)
